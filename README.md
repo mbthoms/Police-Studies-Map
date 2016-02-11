@@ -4,7 +4,7 @@ Web Studio Project for Georgian College. Using Bootstrap and the Leaflet API.
 ##Group Members:
   Matthew Thoms, Katie Kramer, Chelsea Smith, Vatche Atikian
 
-### How to Use
+### How to Use:
 1. Pull the documents down from Github.
 2. Put ALL the files into a folder.
 3. Open CMD(PC) or Terminal(MAC).
