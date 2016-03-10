@@ -1,14 +1,11 @@
 <%- include partials/header.ejs %>
-
-
 <div class="container-fluid">
   <div class="row-fluid">
     <div class=" centering text-center">
       <section class="background-white">
-        <img src="/images/research-crest-logo.png" alt="">
       <form class="container login-form" method="POST" action="">
-
-          <h2 class="login-form-input">Login</h2>
+          <img class="login-logo" src="/images/research-crest-logo.png" alt="Georgian College Research Logo.">
+          <h2 class="login-form-title">Login</h2>
           <section class="form-group">
             <label for="username" class="sr-only">Username:</label>
             <input class="form-control login-form-input" type="text" title="username" placeholder="Username">
@@ -20,7 +17,7 @@
           </section>
 
           <section>
-            <input class="btn btn-primary" type="submit">
+            <button type="submit">Submit</button>
           </section>
         <p class="login-footer">Made with <i class="fa fa-heart"></i> by Pixel{ate}</p>
       </form>
