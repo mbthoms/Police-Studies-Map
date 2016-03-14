@@ -1,5 +1,5 @@
 /*Main Styles
-===========================================================*/
+======================================================================================================================*/
 html, body{
     font-family: 'Lato', sans-serif;
     height:100%;
@@ -27,17 +27,36 @@ p {
   line-height: 20pt;
 }
 
-body {
-    margin-top: 90px;
+@media (min-width: 768px) {
+    main {
+        margin-top: 125px;
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        margin-top: 50px;
+    }
+}
+.main-background {
+    margin-top: 0px;
+}
+
+/* Numbering
+======================================================================================================================*/
+.numbering {
+    font-weight: 400;
+    font-size: 35pt;
+    color: #595959;
 }
 
 /*Nav
-===========================================================*/
+======================================================================================================================*/
 /*Setting the padding on the top and bottom of the links in the navbar.*/
 .navbar-nav>li>a {
     font-size: 16pt;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 53px;
+    padding-bottom: 53px;
     color: #ffffff;
 }
 
@@ -93,7 +112,7 @@ body {
     transform: rotate(0);
 }
 /* Links
-===========================================================*/
+======================================================================================================================*/
 
 a {
   font-size: 12pt;
@@ -106,8 +125,8 @@ a:hover {
 }
 
 /* Buttons
-===========================================================*/
-button {
+======================================================================================================================*/
+.button {
   margin: 20px;
   font-size: 16pt;
   padding: 10px 20px;
@@ -117,13 +136,15 @@ button {
   border-radius: none;
 }
 
-button:hover {
+.button:hover {
   background:#595959;
   transition: all 0.5s ease 0s;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /*Login Form
-===========================================================*/
+======================================================================================================================*/
 
 
 .main-background {
@@ -172,3 +193,26 @@ button:hover {
   border-radius: 0px;
 }
 
+/*Landing Page
+======================================================================================================================*/
+.hero-img  {
+    background-image: url("/images/city.jpg");
+    background-position: center;
+    margin-top: 0px;
+    min-height: 600px;
+    color: white;
+}
+
+#instructions {
+    border-top: 15px solid #993333;
+}
+
+.page-header-title {
+    color: #993333;
+}
+
+.steps {
+    height: 150px;
+    width: auto;
+    margin-bottom: 70px;
+}
