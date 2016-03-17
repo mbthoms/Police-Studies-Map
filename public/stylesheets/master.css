@@ -50,6 +50,22 @@ p {
     color: #595959;
 }
 
+@media (max-width: 767px) {
+    .navbar-brand>img {
+        display: none;
+    }
+    .navbar-default .navbar-brand {
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-logo-text {
+        display: none;
+    }
+
+}
+
 /*Nav
 ======================================================================================================================*/
 /*Setting the padding on the top and bottom of the links in the navbar.*/
@@ -209,10 +225,31 @@ a:hover {
 
 .page-header-title {
     color: #993333;
+    padding: 30px;
 }
 
 .steps {
     height: 150px;
     width: auto;
     margin-bottom: 70px;
+}
+
+footer {
+    margin: 0px;
+    padding:20px 0px;
+    color: #ffffff;
+    background-color: #993333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*Landing Page
+======================================================================================================================*/
+#map {
+    height: 800px;
 }
