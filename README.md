@@ -4,6 +4,8 @@ Web Studio Project for Georgian College. Using Bootstrap and the Leaflet API.
 ##Group Members:
   Matthew Thoms, Katie Kramer, Chelsea Smith, Vatche Atikian
 
+Live on Server: http://police-studies-map.azurewebsites.net/
+
 ### How to start Building:
 1. Pull the documents down from Github.
 2. Put ALL the files into a folder.
