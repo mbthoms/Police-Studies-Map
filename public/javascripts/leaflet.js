@@ -2,15 +2,46 @@
 
 
 //DOCUMENT READY!!!!!!!!!!
-
 $( document ).ready(function() {
     //Checking to see if the document is ready.
     console.log( "DOM is ready!" );
 
 
+    //Calling the function to get the location.
+    getLocation();
+
+    var x = document.getElementById("warning");
+
+    var lat;
+    var long;
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    //showPosition(position);
+    function showPosition(position) {
+        console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+
+    }
+
+
+
+    console.log(lat, long);
+
+
+
+
 
     //Setting the View to the current area.
-    var map = L.map('map').setView([44.6055708, -79.4575289], 13);
+
+
+    var map = L.map('map').setView([lat, long], 13);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
