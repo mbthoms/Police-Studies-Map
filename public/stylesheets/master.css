@@ -31,6 +31,9 @@ p {
     main {
         margin-top: 125px;
     }
+    .first-container {
+        margin-top: 150px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -40,6 +43,27 @@ p {
 }
 .main-background {
     margin-top: 0px;
+}
+
+/*Setting everything to not have rounded corners.*/
+.form-control,
+.dropdown-menu,
+.btn,
+.well,
+.panel,
+.panel-default,
+.panel-info,
+.panel-body,
+.panel-heading,
+.panel-warning,
+.panel-default,
+.modal-dialog,
+.modal-content,
+.modal-body,
+.panel-group,
+.alert,
+.alert-info {
+    border-radius: 0px;
 }
 
 /* Numbering
@@ -142,7 +166,7 @@ a:hover {
 
 /* Buttons
 ======================================================================================================================*/
-.button {
+.btn-main {
   margin: 20px;
   font-size: 16pt;
   padding: 10px 20px;
@@ -152,7 +176,7 @@ a:hover {
   border-radius: none;
 }
 
-.button:hover {
+.btn-main:hover {
   background:#595959;
   transition: all 0.5s ease 0s;
     color: #ffffff;
@@ -251,5 +275,5 @@ footer p {
 /*Landing Page
 ======================================================================================================================*/
 #map {
-    height: 700px;
+    height: 500px;
 }

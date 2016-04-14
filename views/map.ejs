@@ -1,12 +1,236 @@
 <%- include partials/head.ejs %>
 <%- include partials/header.ejs %>
 
-<main class="container">
+<main class="container first-container">
     <section class="col-sm-12 col-md-4 col-lg-4">
-        <button onclick="getLocation()">Try It</button>
+
+
+
+
+
+        <h3>Input Information on Map</h3>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <h4>Residential Property</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Majority Type of Housing/General Property
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <!--This is the starting of the form-->
+                        <form action="" class="">
+
+
+                            <!--Majority Type of Housing-->
+                            <section class="form-group">
+                                <label for="res-type-house" class="sr-only">Majority Type of Housing:</label>
+                                <select name="res-type-house" class="form-control">
+                                    <option value="Town">Town</option>
+                                    <option value="Semi-Detached">Semi-Detached</option>
+                                    <option value="Detached">Mercedes</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="res-type-house-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-type-house-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>
+
+                            <!-- ================================================================================
+                            General Property
+                            =================================================================================
+                            ================================================================================= -->
+
+
+
+
+                                <!-- ================================================================================
+                                House
+                                ================================================================================= -->
+
+
+                            <section class="form-group">
+                                <label>General Property</label><br>
+                                <label for="res-house" class="">House:</label>
+                                <select name="res-house" class="form-control">
+                                    <option value="Derelict">Derelict</option>
+                                    <option value="Major Repairs">Major Repairs</option>
+                                    <option value="Minor Repairs">Minor Repairs</option>
+                                    <option value="Fair Condition">Fair Condition</option>
+                                    <option value="New Condition">New Condition</option>
+                                </select>
+                                <label for="res-house-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-house-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>
+
+                            <!--Yard/Driveway-->
+
+                            <section class="form-group">
+                                <label for="res-yard" class="">Yard/Driveway:</label>
+                                <select name="res-yard" class="form-control">
+                                    <option value="Derelict">Derelict</option>
+                                    <option value="Major Repairs">Major Repairs</option>
+                                    <option value="Minor Repairs">Minor Repairs</option>
+                                    <option value="Fair Condition">Fair Condition</option>
+                                    <option value="New Condition">New Condition</option>
+                                </select>
+                                <label for="res-yard-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-yard-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>
+                            
+                            <!--Lighting-->
+
+                            <section class="form-group">
+                                <label for="res-lighting" class="">Lighting:</label>
+                                <select name="res-lighting" class="form-control">
+                                    <option value="None">None</option>
+                                    <option value="Insufficient">Insufficient</option>
+                                    <option value="Adequate">Adequate</option>
+                                    <option value="Plenty">Plenty</option>
+                                    <option value="Substantial">Substantial</option>
+                                </select>
+                                <label for="res-lighting-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-lighting-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- ================================================================================
+            Vehicles
+            ================================================================================= -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Vehicles
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <!--Condition-->
+
+                            <section class="form-group">
+                                <label for="res-condition" class="">Condition:</label>
+                                <select name="condition" class="form-control">
+                                    <option value="Derelict">Derelict</option>
+                                    <option value="Major Repairs">Major Repairs</option>
+                                    <option value="Minor Repairs">Minor Repairs</option>
+                                    <option value="Fair Condition">Fair Condition</option>
+                                    <option value="New Condition">New Condition</option>
+                                </select>
+                                <label for="res-condition-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-condition-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>  
+                            <!--Location-->
+
+                            <section class="form-group">
+                                <label for="res-location" class="">Locationroad-condition:</label>
+                                <select name="res-location" class="form-control">
+                                    <option value="Street">Street</option>
+                                    <option value="Driveway">Driveway</option>
+                                    <option value="Garage">Garage</option>
+                                </select>
+                                <label for="res-location-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="res-location-comment" rows="2" placeholder="Comments:"></textarea>
+                            </section>  
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================================================================================
+            Public Property
+            =================================================================================
+            ================================================================================= -->
+
+
+
+            <h4>Public Property</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Public Property Condition
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      
+
+                            <!-- ================================================================================
+                            Public Property Condition
+                            ================================================================================= -->
+
+                            <section class="form-group">
+                                <label for="lighting" class="">Lighting:</label>
+                                <select name="lighting" class="form-control">
+                                    <option value="None">None</option>
+                                    <option value="Insufficient">Insufficient</option>
+                                    <option value="Adequate">Adequate</option>
+                                    <option value="Plenty">Plenty</option>
+                                    <option value="Substantial">Substantial</option>
+                                </select>
+                                <label for="yard-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="yard-comment" rows="5" placeholder="Comments:"></textarea>
+                            </section>  
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Road Condition
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <!--road-condition-->
+
+                            <section class="form-group">
+                                <label for="public-road-condition" class="">Road Condition:</label>
+                                <select name="public-road-condition" class="form-control">
+                                    <option value="Derelict">Derelict</option>
+                                        <option value="Major Repairs">Major Repairs</option>
+                                    <option value="Minor Repairs">Minor Repairs</option>
+                                    <option value="Fair Condition">Fair Condition</option>
+                                    <option value="New Condition">New Condition</option>
+                                </select>
+                                <label for="public-road-condition-comment" class="sr-only">Comments:</label>
+                                <br>
+                                <textarea class="form-control" name="public-road-condition-comment" rows="5" placeholder="Comments:"></textarea>
+                            </section>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input class="btn-main" type="submit" value="Submit">
+        </form>
+        <!--This is the ending of the form-->
     </section>
     <section class="col-sm-12 col-md-8 col-lg-8">
-
+        <h3>Map with<br>Information</h3>
         <div id="map"></div>
     </section>
 </main>

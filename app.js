@@ -5,10 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+//Using Mongoose Module
+var mongoose = require('mongoose');
+
+//Modules that work with the login/Register.
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+var LocalStrategy = require('passport-local').Strategy;
+
+
+var login = require('./routes/index');
 var users = require('./routes/users');
 var landing = require('./routes/landing');
 var map = require('./routes/map');
+var register = require('./routes/index');
 
 var app = express();
 
@@ -24,10 +35,55 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+
+
+
+
+
+
+
+
+//Configuring the Passport Module.
+app.use(session({
+  secret: 'police-studies-map login',
+  resave: true,
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Using the Account Model.
+var Account = require('./models/account');
+passport.use(Account.createStrategy());
+passport.use(new LocalStrategy(Account.authenticate()));
+
+//Accessing the Session information.
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+
+
+app.use('/', login);
 app.use('/users', users);
 app.use('/landing', landing);
 app.use('/map', map);
+app.use('/register', register);
+
+
+
+//Connecting to the database using Mongoose.
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'DB Error: '));
+
+db.once('open', function(callback) {
+  //If the database is connected display message in console.
+  console.log('Connected to mongodb');
+});
+
+//Reading the Database Connection from the config/db.js file.
+var configDb = require('./config/db.js');
+mongoose.connect(configDb.url);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -35,6 +91,13 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
+
+
+
+
+
 
 // error handlers
 
