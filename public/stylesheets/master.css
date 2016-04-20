@@ -272,8 +272,35 @@ footer p {
     margin: 0px;
 }
 
-/*Landing Page
+/*Map Page
 ======================================================================================================================*/
 #map {
     height: 500px;
+}
+
+/*Index Page
+======================================================================================================================*/
+@media (min-width: 768px) {
+    .index-page {
+        width: 800px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px 40px;
+    }
+    .index-logo {
+        width: 35%;
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .index-logo {
+        width: 60%;
+        height: auto;
+    }
+
+    .index-page {
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px 40px;
+    }
 }

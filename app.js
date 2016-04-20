@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 //Using Mongoose Module
 var mongoose = require('mongoose');
 
@@ -14,34 +13,24 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var LocalStrategy = require('passport-local').Strategy;
 
-
-var login = require('./routes/index');
+var routes = require('./routes/index');
 var users = require('./routes/users');
 var landing = require('./routes/landing');
 var map = require('./routes/map');
-var register = require('./routes/index');
+var login = require('./routes/login');
 
 var app = express();
-
-// view engine setup
+//The views engine setup.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-
-
-
-
-
+// Allowing flash to show the messages that are saved in the session.
+app.use(flash());
 
 //Configuring the Passport Module.
 app.use(session({
@@ -64,12 +53,11 @@ passport.deserializeUser(Account.deserializeUser());
 
 
 
-app.use('/', login);
+app.use('/', routes);
 app.use('/users', users);
 app.use('/landing', landing);
 app.use('/map', map);
-app.use('/register', register);
-
+app.use('/login/login', login);
 
 
 //Connecting to the database using Mongoose.
@@ -91,11 +79,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-
-
-
-
 
 
 

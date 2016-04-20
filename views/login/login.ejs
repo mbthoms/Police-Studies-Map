@@ -1,0 +1,31 @@
+
+<%- include ../partials/head.ejs %>
+<main class="main-background">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class=" centering text-center">
+                <section class="background-white">
+                    <form class="container login-form" method="POST" action="/">
+                        <img class="login-logo" src="/images/ResearchCrestFinalblack.png" alt="Georgian College Research Logo.">
+                        <section class="form-group">
+                            <h1>Login</h1>
+                            <label for="username" class="sr-only">Username:</label>
+                            <input class="form-control login-form-input" type="text" title="username" placeholder="Username">
+                        </section>
+
+                        <section class="form-group">
+                            <label class="sr-only" for="password">Password:</label>
+                            <input class="form-control login-form-input" type="password" title="Password" placeholder="Password">
+                        </section>
+
+                        <section>
+                            <a class="btn-main" href="/landing">Login</a>
+                        </section>
+                        <p class="login-footer">Made with <i class="fa fa-heart"></i> by Pixel{ate}</p>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include ../partials/footer-index.ejs %>

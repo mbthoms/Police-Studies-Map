@@ -1,34 +1,21 @@
-<%- include /partials/head.ejs %>
+
+<%- include partials/head.ejs %>
 <main class="main-background">
     <div class="container-fluid">
-      <div class="row-fluid">
-        <div class=" centering text-center">
-          <section class="background-white">
-          <form class="container login-form" method="POST" action="/">
-              <img class="login-logo" src="/images/ResearchCrestFinalblack.png" alt="Georgian College Research Logo.">
-              <h2 class="login-form-title">Login</h2>
-              <!--Error Messages if any show up here.-->
-              <% if (messages.length > 0) { %>
-              <div class="alert alert-danger"><%= messages %></div>
-              <% } %>
-              <section class="form-group">
-                <label for="username" class="sr-only">Username:</label>
-                <input class="form-control login-form-input" type="text" title="username" placeholder="Username">
-              </section>
-
-              <section class="form-group">
-                <label class="sr-only" for="password">Password:</label>
-                <input class="form-control login-form-input" type="password" title="Password" placeholder="Password">
-              </section>
-
-              <section>
-                <button class="btn-main" type="submit">Submit</button>
-              </section>
-            <p class="login-footer">Made with <i class="fa fa-heart"></i> by Pixel{ate}</p>
-          </form>
-            </section>
+        <div class="row-fluid">
+            <div class=" centering text-center">
+                <section class="background-white">
+                    <div class="container index-page" method="POST" action="/">
+                        <img class="index-logo" src="/images/ResearchCrestFinalblack.png" alt="Georgian College Research Logo.">
+                        <h1 class="index-h1">Welcome to Georgian College's research program application </h1>
+                        <section>
+                            <a href="/login/login" class="btn-main">Login</a>
+                        </section>
+                        <p class="login-footer">Made with <i class="fa fa-heart"></i> by Pixel{ate}</p>
+                    </div>
+                </section>
+            </div>
         </div>
-      </div>
     </div>
 </main>
-<%- include /partials/footer-index.ejs %>
+<%- include partials/footer-index.ejs %>

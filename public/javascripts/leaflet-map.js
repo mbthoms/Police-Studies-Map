@@ -76,7 +76,7 @@ $( document ).ready(function() {
     //Setting the View to the current area.
 
 
-    var map = L.map('map').setView([lat, long], 13);
+    var map = L.map('map').setView([lat, long], 15);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -85,17 +85,31 @@ $( document ).ready(function() {
         //Importing the AccessToken for Mapbox to import the map into the API.
         accessToken: 'pk.eyJ1IjoibWJ0aG9tcyIsImEiOiJjaWthZG5wNWkwbDlwdm9tNDNqMWExa203In0.aGp3MFkSijj0MXt6YPVR4Q'
     }).addTo(map);
+
 //Pin is dropped into the map.
-
-
-    var marker = L.marker([51.5, -0.09]).addTo(map);
-
-
+    //Red Circle.
     var circle = L.circle([44.6055708, -79.4575289], 100, {
         color: 'red',
         fillColor: 'red',
         fillOpacity: 0.5
-    }).addTo(map);
+    }).addTo(map)
+        .bindPopup('<b>Majority Type of Housing:</b> Town<br><b>House:</b> Major Repairs<br><b>Road Condition:</b> Major Repairs<br><b>Comments:</b> This Spot is red.');
+
+    //Green Circle.
+    var circle = L.circle([44.60345, -79.45452], 100, {
+        color: 'green',
+        fillColor: 'green',
+        fillOpacity: 0.5
+    }).addTo(map)
+        .bindPopup('<b>Majority Type of Housing:</b> Apartment<br><b>House:</b> New Condition<br><b>Road Condition:</b> New Condition <br> <b>Comments:</b> This Spot is green.');
+
+    //Yellow Circle.
+    var circle = L.circle([44.60987, -79.46089], 100, {
+        color: 'yellow',
+        fillColor: 'yellow',
+        fillOpacity: 0.5
+    }).addTo(map)
+        .bindPopup('<b>Majority Type of Housing:</b> Town<br><b>House:</b> Minor Repairs<br><b>Road Condition:</b> Minor Repairs <br> <b>Comments:</b> This Spot is yellow.');
 
 
 //Creates popup on the map when you click on the map.
